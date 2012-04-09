@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+<org.zeroxlab.widget.AnimationLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/animation_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="Hello World, MainActivity"
-    />
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/animation_sidebar"
+        android:layout_width="200dip"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <Button
+            android:id="@+id/sidebar_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sidebar Button"
+            />
+        <ListView
+            android:id="@+id/sidebar_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
 
+    <!-- To make LinearLayout clickable to trigger onContentTouchedWhenOpening()  -->
+    <LinearLayout
+        android:id="@+id/animation_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#999999"
+        android:clickable="true"
+        >
+        <Button android:id="@+id/content_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Content Button"
+            android:onClick="onClickContentButton"
+            />
+        <TextView android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The Answer to Life, the Universe, and Everything -- is 42"
+            />
+    </LinearLayout>
+</org.zeroxlab.widget.AnimationLayout>
