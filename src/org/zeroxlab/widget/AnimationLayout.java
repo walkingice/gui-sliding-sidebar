@@ -18,6 +18,7 @@
 
 package org.zeroxlab.widget;
 
+// update the package name to match your app
 import org.zeroxlab.demo.R;
 
 import android.content.Context;
@@ -57,8 +58,8 @@ public class AnimationLayout extends ViewGroup {
     @Override
     public void onFinishInflate() {
         super.onFinishInflate();
-        mSidebar = findViewById(R.id.animation_sidebar);
-        mContent = findViewById(R.id.animation_content);
+        mSidebar = findViewById(R.id.animation_layout_sidebar);
+        mContent = findViewById(R.id.animation_layout_content);
 
         if (mSidebar == null) {
             throw new NullPointerException("no view id = animation_sidebar");

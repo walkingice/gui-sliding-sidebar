@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     >
     <LinearLayout
-        android:id="@+id/animation_sidebar"
+        android:id="@id/animation_layout_sidebar"
         android:layout_width="200dip"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -25,7 +25,7 @@
 
     <!-- To make LinearLayout clickable to trigger onContentTouchedWhenOpening()  -->
     <LinearLayout
-        android:id="@+id/animation_content"
+        android:id="@id/animation_layout_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#999999"
