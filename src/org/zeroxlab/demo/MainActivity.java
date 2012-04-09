@@ -36,6 +36,15 @@ public class MainActivity extends Activity implements AnimationLayout.Listener {
         mLayout.toggleSidebar();
     }
 
+    @Override
+    public void onBackPressed() {
+        if (mLayout.isOpening()) {
+            mLayout.closeSidebar();
+        } else {
+            finish();
+        }
+    }
+
     /* Callback of AnimationLayout.Listener to monitor status of Sidebar */
     @Override
     public void onSidebarOpened() {
