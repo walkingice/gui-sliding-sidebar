@@ -40,6 +40,7 @@
         android:layout_height="match_parent"
         android:background="#999999"
         android:clickable="true"
+        android:orientation="vertical"
         >
         <Button android:id="@+id/content_button"
             android:layout_width="wrap_content"
@@ -51,6 +52,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="The Answer to Life, the Universe, and Everything -- is 42"
+            android:textColor="#000000"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon"
             />
     </LinearLayout>
 </org.zeroxlab.widget.AnimationLayout>
