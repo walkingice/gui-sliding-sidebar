@@ -1,0 +1,12 @@
+This project tries to provide a demo of widget AnimationLayout.
+
+The widget, AnimationLayout, works like Facebook Android app, it placed a sliding sidebar in left side.
+
+
+if you use command line to build android app
+
+    $ git clone <this project>
+    $ cd <project>
+    $ android update project -p .
+    $ android debug install
+
