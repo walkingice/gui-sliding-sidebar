@@ -1,0 +1,4 @@
+ant.properties
+bin/*
+gen/*
+local.properties
