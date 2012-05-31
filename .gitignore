@@ -2,3 +2,4 @@ ant.properties
 bin/*
 gen/*
 local.properties
+proguard-project.txt
