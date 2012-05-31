@@ -38,7 +38,8 @@ public class AnimationLayout extends ViewGroup {
     protected boolean mOpened;
     protected View mSidebar;
     protected View mContent;
-    protected int mSidebarWidth = 150; // by default
+    protected int mSidebarWidth = 150; /* assign default value. It will be overwrite
+                                          in onMeasure by Layout xml resource. */
 
     protected Animation mAnimation;
     protected OpenListener    mOpenListener;
