@@ -35,6 +35,7 @@ public class AnimationLayout extends ViewGroup {
 
     public final static int DURATION = 500;
 
+    protected boolean mPlaceLeft = true;
     protected boolean mOpened;
     protected View mSidebar;
     protected View mContent;
@@ -77,9 +78,21 @@ public class AnimationLayout extends ViewGroup {
     @Override
     public void onLayout(boolean changed, int l, int t, int r, int b) {
         /* the title bar assign top padding, drop it */
-        mSidebar.layout(l, 0, l + mSidebarWidth, 0 + mSidebar.getMeasuredHeight());
+        int sidebarLeft = l;
+        if (!mPlaceLeft) {
+            sidebarLeft = r - mSidebarWidth;
+        }
+        mSidebar.layout(sidebarLeft,
+                0,
+                sidebarLeft + mSidebarWidth,
+                0 + mSidebar.getMeasuredHeight());
+
         if (mOpened) {
-            mContent.layout(l + mSidebarWidth, 0, r + mSidebarWidth, b);
+            if (mPlaceLeft) {
+                mContent.layout(l + mSidebarWidth, 0, r + mSidebarWidth, b);
+            } else  {
+                mContent.layout(l - mSidebarWidth, 0, r - mSidebarWidth, b);
+            }
         } else {
             mContent.layout(l, 0, r, b);
         }
@@ -159,11 +172,19 @@ public class AnimationLayout extends ViewGroup {
 
         if (mOpened) {
             /* opened, make close animation*/
-            mAnimation = new TranslateAnimation(0, -mSidebarWidth, 0, 0);
+            if (mPlaceLeft) {
+                mAnimation = new TranslateAnimation(0, -mSidebarWidth, 0, 0);
+            } else {
+                mAnimation = new TranslateAnimation(0, mSidebarWidth, 0, 0);
+            }
             mAnimation.setAnimationListener(mCloseListener);
         } else {
             /* not opened, make open animation */
-            mAnimation = new TranslateAnimation(0, mSidebarWidth, 0, 0);
+            if (mPlaceLeft) {
+                mAnimation = new TranslateAnimation(0, mSidebarWidth, 0, 0);
+            } else {
+                mAnimation = new TranslateAnimation(0, -mSidebarWidth, 0, 0);
+            }
             mAnimation.setAnimationListener(mOpenListener);
         }
         mAnimation.setDuration(DURATION);
